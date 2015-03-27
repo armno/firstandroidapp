@@ -15,12 +15,20 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final String[] myNames = {
+            "Armno",
+            "Prommarak",
+            "Hellono",
+            "Generator"
+        };
+
         final TextView textLabel = (TextView) findViewById(R.id.helloWorld);
         Button pushMe = (Button) findViewById(R.id.button);
         pushMe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textLabel.setText("Update on hello world.");
+                final int rando = (int) (Math.random() * 4);
+                textLabel.setText(myNames[rando]);
             }
         });
 
