@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class MainActivity extends ActionBarActivity {
 
     @Override
@@ -18,16 +20,22 @@ public class MainActivity extends ActionBarActivity {
         final String[] myNames = {
             "Armno",
             "Prommarak",
-            "Hellono",
-            "Generator"
+            "is",
+            "Cool!",
+            "Awesome!",
+            "Superb!",
+            "Generator!"
         };
 
         final TextView textLabel = (TextView) findViewById(R.id.helloWorld);
+        textLabel.setText("Hello Armno");
+
         Button pushMe = (Button) findViewById(R.id.button);
         pushMe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final int rando = (int) (Math.random() * 4);
+                Random randGen = new Random();
+                final int rando = randGen.nextInt(myNames.length);
                 textLabel.setText(myNames[rando]);
             }
         });
