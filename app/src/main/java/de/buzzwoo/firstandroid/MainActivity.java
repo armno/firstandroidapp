@@ -35,8 +35,9 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 Random randGen = new Random();
-                final int rando = randGen.nextInt(myNames.length);
-                textLabel.setText(myNames[rando]);
+                int rando = randGen.nextInt(5) + 1;
+                String randnum = Integer.toString(rando);
+                textLabel.setText(randnum);
             }
         });
 
