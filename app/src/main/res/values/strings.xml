@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">FirstAndroid</string>
 
-    <string name="hello_world">Hello world!</string>
+    <string name="hello_world">Guess a number</string>
     <string name="action_settings">Settings</string>
     <string name="button_primary">Click me!</string>
     <string name="beach">Beautiful Beach</string>
