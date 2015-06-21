@@ -35,7 +35,7 @@
         android:layout_below="@+id/guessLabel"
         android:layout_centerHorizontal="true" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/resultText"
