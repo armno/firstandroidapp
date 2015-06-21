@@ -11,30 +11,45 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_above="@+id/helloWorld"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
         android:contentDescription="The Beach" />
 
 
-    <TextView android:text="@string/hello_world"
+    <TextView android:text="@string/guess_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/helloWorld"
-        android:layout_above="@+id/button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="29dp"
+        android:id="@+id/guessLabel"
         android:textColor="#B43104"
-        android:textSize="30sp"/>
+        android:textSize="30sp"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_centerHorizontal="true" />
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/guessText"
+        android:text="0"
+        android:layout_below="@+id/guessLabel"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultText"
+        android:layout_below="@+id/guessText"
+        android:layout_centerHorizontal="true" />
+
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_primary"
         android:id="@+id/button"
+        android:textColor="#58ACFA"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="119dp"
-        android:textColor="#58ACFA"/>
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

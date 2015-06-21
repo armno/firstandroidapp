@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -27,16 +28,32 @@ public class MainActivity extends ActionBarActivity {
             "Generator!"
         };
 
-        final TextView textLabel = (TextView) findViewById(R.id.helloWorld);
-        textLabel.setText("Hello Armno");
+        final TextView guessLabel = (TextView) findViewById(R.id.guessLabel);
+        final TextView resultText = (TextView) findViewById(R.id.resultText);
+        final EditText guessText = (EditText) findViewById(R.id.guessText);
 
         Button pushMe = (Button) findViewById(R.id.button);
+
         pushMe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String randText = "";
                 Random randGen = new Random();
-                final int rando = randGen.nextInt(myNames.length);
-                textLabel.setText(myNames[rando]);
+                final int rando = randGen.nextInt(5) + 1;
+
+                int userNumber = Integer.parseInt(guessText.getText().toString());
+
+                if (userNumber < 1 || userNumber > 5) {
+                    guessLabel.setText("Please guess 1 - 5!!");
+                } else if (userNumber == rando) {
+                    guessLabel.setText("You got it right!!");
+                } else {
+                    guessLabel.setText("Not quite, try again!");
+                    guessText.setText("0");
+                }
+
+                randText = Integer.toString(rando);
+                resultText.setText(randText);
             }
         });
 
