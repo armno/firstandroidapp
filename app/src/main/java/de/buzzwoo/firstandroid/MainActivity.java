@@ -1,5 +1,6 @@
 package de.buzzwoo.firstandroid;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -32,7 +33,21 @@ public class MainActivity extends ActionBarActivity {
         final TextView resultText = (TextView) findViewById(R.id.resultText);
         final EditText guessText = (EditText) findViewById(R.id.guessText);
 
+        final MediaPlayer angel = MediaPlayer.create(MainActivity.this, R.raw.angel);
+
         Button pushMe = (Button) findViewById(R.id.button);
+        Button playAngel = (Button) findViewById(R.id.playAudio);
+
+        playAngel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (angel.isPlaying()) {
+                    angel.seekTo(0);
+                } else {
+                    angel.start();
+                }
+            }
+        });
 
         pushMe.setOnClickListener(new View.OnClickListener() {
             @Override
